@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/usdc-whale-traker/static/css/main.4e63fbad.css",
+    "main.js": "/usdc-whale-traker/static/js/main.554567d2.js",
+    "index.html": "/usdc-whale-traker/index.html",
+    "main.4e63fbad.css.map": "/usdc-whale-traker/static/css/main.4e63fbad.css.map",
+    "main.554567d2.js.map": "/usdc-whale-traker/static/js/main.554567d2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e63fbad.css",
+    "static/js/main.554567d2.js"
+  ]
+}
