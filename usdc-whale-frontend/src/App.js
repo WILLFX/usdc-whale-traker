@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import WhaleTransactionTable from './WhaleTransactionTable';
 import WhaleTransactionChart from './WhaleTransactionChart';
-import MintBurnEvents from './MintingBurningEvents'; // Assuming you have a component to handle mint/burn events
-import { useQuery, gql } from '@apollo/client';
+import MintBurnEvents from './MintingBurningEvents'; 
+import { useApolloClient, useQuery, gql } from '@apollo/client';
 
 const GET_TRANSACTIONS = gql`
   query GetWhaleTransactions {
@@ -42,19 +42,23 @@ const GET_MINT_BURN_EVENTS = gql`
 `;
 
 function App() {
+  const client = useApolloClient(); 
+
   const { loading, error, data, startPolling } = useQuery(GET_TRANSACTIONS, {
-    pollInterval: 10000, // Poll every 10 seconds
+    pollInterval: 10000, 
+    client, 
   });
 
   const { data: mintBurnData, loading: mintBurnLoading, error: mintBurnError } = useQuery(GET_MINT_BURN_EVENTS, {
-    pollInterval: 10000, // Poll every 10 seconds
+    pollInterval: 10000, 
+    client, 
   });
 
-  const [lastUpdate, setLastUpdate] = useState(null); // State to track last update timestamp
+  const [lastUpdate, setLastUpdate] = useState(null); 
 
   useEffect(() => {
     if (data || mintBurnData) {
-      setLastUpdate(new Date().toLocaleString()); // Update the last update timestamp whenever data changes
+      setLastUpdate(new Date().toLocaleString()); 
     }
   }, [data, mintBurnData]);
 
@@ -87,3 +91,4 @@ function App() {
 }
 
 export default App;
+
