@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@graphprotocol/graph-ts": "^0.35.1"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "chart.js": "^4.4.4",
+    "graphql": "^16.9.0",
+    "react-chartjs-2": "^5.2.0"
+  }
+}

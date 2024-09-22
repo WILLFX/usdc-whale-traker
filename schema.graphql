@@ -1,0 +1,32 @@
+type Transaction @entity {
+  id: ID!
+  hash: Bytes!
+  from: Account!
+  to: Account!
+  value: BigInt!
+  timestamp: BigInt!
+  whaleSize: String!       # Small, Medium, Mega
+  networkFlow: String!     # Inbound, Outbound, Internal
+  timePeriod: String!      # Daily, Weekly, Monthly
+}
+
+type Account @entity {
+  id: ID!
+  address: Bytes!
+  transactionCount: Int!
+  whaleTransactionCount: Int!
+}
+
+type MintEvent @entity {
+  id: ID!
+  to: Account!
+  value: BigInt!
+  timestamp: BigInt!
+}
+
+type BurnEvent @entity {
+  id: ID!
+  from: Account!
+  value: BigInt!
+  timestamp: BigInt!
+}

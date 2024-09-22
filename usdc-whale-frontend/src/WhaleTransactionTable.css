@@ -1,0 +1,72 @@
+body {
+  background-color: #181818; /* Dark background */
+  color: #d1d1d1; /* Light text color */
+}
+
+h1, h2, h3 {
+  color: #ffffff; /* White text for section titles */
+}
+
+table {
+  width: 100%;
+  background-color: #1e1e1e; /* Slightly lighter table background */
+  color: #d1d1d1; /* Text color inside table */
+  border-collapse: collapse;
+  margin: 20px 0;
+  border: 2px solid #555555; /* Distinct border for the entire table */
+}
+
+th, td {
+  border: 2px solid #555555; /* Distinct borders for table cells */
+  padding: 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: #1a1a1a; /* Alternate row background for readability */
+}
+
+.table-section {
+  margin-bottom: 200px; /* Vertical space between tables */
+}
+
+/* Word-wrap adjustment for long text columns */
+td, th {
+  word-wrap: break-word; /* Ensures long text (Transaction ID, From, To) wraps neatly */
+  max-width: 150px; /* Limit column width */
+}
+
+
+/* Buttons and links */
+a {
+  color: #00ff00; /* Green links */
+}
+
+a:hover {
+  color: #ff4c4c; /* Red on hover */
+}
+
+button {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555555;
+}
+
+/* Styling for table values (positive/negative colors) */
+td.positive {
+  color: #00ff00; /* Green for positive values */
+}
+
+td.negative {
+  color: #ff4c4c; /* Red for negative values */
+}
+
+/* Additional vertical spacing between distinct data sections */
+.table-section, .chart-section, .minting-section, .burning-section {
+  margin-bottom: 200px; /* Vertical spacing between different sections like the graph, minting, burning */
+}
